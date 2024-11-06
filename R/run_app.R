@@ -14,15 +14,18 @@ run_app <- function(
   uiPattern = "/",
   ...
 ) {
+  
   with_golem_options(
-    app = shinyApp(
+    app = bslib::run_with_themer(
+      shinyApp(
       ui = app_ui,
       server = app_server,
       onStart = onStart,
       options = options,
       enableBookmarking = enableBookmarking,
       uiPattern = uiPattern
-    ),
+    )),
     golem_opts = list(...)
   )
+  
 }

@@ -6,12 +6,17 @@
 #' @noRd
 app_ui <- function(request) {
   
+  custom_theme <- bslib::bs_theme(
+    version = 5,
+    preset = "cerulean"
+  )
+  
   tagList(
     # Leave this function for adding external resources
     golem_add_external_resources(),
     bslib::page_navbar(
       title = "mlRdrift",
-      theme = choose_theme(),
+      theme = custom_theme,
       footer = "(c) data for know, 2024",
       nav_spacer(),
       nav_spacer(),
